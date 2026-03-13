@@ -104,14 +104,11 @@ export function TeamSection() {
                 </div>
 
                 {/* Contact Action */}
-                <div
-                  style={{ marginTop: '20px', paddingTop: '20px', borderTop: '1px solid rgba(167, 243, 208, 0.5)' }}
-                  className="w-full flex justify-center"
-                >
+                <div>
                   <Button
-                    variant="outline"
+                    variant="default"
                     size="sm"
-                    className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-full shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300"
+                    className="mt-5 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-full shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300"
                     asChild
                   >
                     <a href={`mailto:${member.email}`}>
