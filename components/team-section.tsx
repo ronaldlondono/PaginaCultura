@@ -9,7 +9,6 @@ const teamMembers = [
     name: "Luis Ronaldo Londoño Gomez",
     program: "Ingeniero de Sistemas",
     semester: "6vo Semestre",
-    image: "/images/team-6.jpg",
     linkedin: "#",
     email: "luis.londono@universidad.edu.co"
   },
@@ -17,7 +16,6 @@ const teamMembers = [
     name: "Santiago Blanco Ribero",
     program: "Administración de Empresas",
     semester: "5to Semestre",
-    image: "/images/team-2.jpg",
     linkedin: "#",
     email: "santiago.blanco@universidad.edu.co"
   },
@@ -25,17 +23,15 @@ const teamMembers = [
     name: "Edgar Regalado Melendez",
     program: "Ingeniero de Sistemas",
     semester: "6to Semestre",
-    image: "/images/team-4.jpg",
     linkedin: "#",
     email: "edgar.regalado@universidad.edu.co"
   },
   {
-    name: "Luz",
-    program: "Ingeniería de Sistemas",
-    semester: "9no Semestre",
-    image: "/images/team-1.jpg",
+    name: "Luz Arrieta Arriaga",
+    program: "Administración Turística y Hotelera.",
+    semester: "6to Semestre",
     linkedin: "#",
-    email: "juan.lopez@universidad.edu.co"
+    email: "luz.arrieta@universidad.edu.co"
   }
 ]
 
