@@ -29,8 +29,8 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled
-          ? "bg-white/70 backdrop-blur-xl shadow-lg shadow-primary/5 border-b border-white/20"
-          : "bg-transparent"
+        ? "bg-white/70 backdrop-blur-xl shadow-lg shadow-primary/5 border-b border-white/20"
+        : "bg-transparent"
         }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -88,8 +88,8 @@ export function Header() {
       {/* Mobile Menu */}
       <div
         className={`lg:hidden absolute top-full left-0 right-0 transition-all duration-300 ${isMobileMenuOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-4 pointer-events-none"
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 -translate-y-4 pointer-events-none"
           }`}
       >
         <div className="mx-4 mt-2 p-6 rounded-3xl bg-white/80 backdrop-blur-xl border border-white/30 shadow-2xl shadow-primary/10">
