@@ -2,12 +2,21 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/lib/i18n-context";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t, language, setLanguage } = useLanguage();
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,13 +27,15 @@ export function Header() {
   }, []);
 
   const navLinks = [
-    { href: "#inicio", label: "Inicio" },
-    { href: "#nosotros", label: "Nosotros" },
-    { href: "#galeria", label: "Galería" },
-    { href: "#tours", label: "Tours" },
-    { href: "#equipo", label: "Equipo" },
-    { href: "#contacto", label: "Contacto" },
+    { href: "#inicio", label: t("nav_home") },
+    { href: "#nosotros", label: t("nav_about") },
+    { href: "#galeria", label: t("nav_gallery") },
+    { href: "#tours", label: t("nav_tours") },
+    { href: "#equipo", label: t("nav_team") },
+    { href: "#contacto", label: t("nav_contact") },
   ];
+  
+  const whatsappUrl = "https://wa.me/573000000000?text=Hola,%20me%20gustaría%20información%20sobre%20la%20preventa%20de%20boletas%20para%20rutas%20inmersivas.";
 
   return (
     <header
@@ -66,13 +77,34 @@ export function Header() {
             </div>
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button and Toggles */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button
-              className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-full px-6 shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300"
+            <div className="flex items-center gap-2">
+              {mounted && (
+                <button
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                  className="p-2 rounded-full bg-white/50 dark:bg-black/50 backdrop-blur-lg border border-white/30 dark:border-white/10 text-foreground/80 hover:text-primary hover:bg-white/80 dark:hover:bg-white/10 transition-all"
+                  aria-label="Toggle theme"
+                >
+                  {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                </button>
+              )}
+              <button
+                onClick={() => setLanguage(language === "es" ? "en" : "es")}
+                className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-full bg-white/50 dark:bg-black/50 backdrop-blur-lg border border-white/30 dark:border-white/10 text-foreground/80 hover:text-primary hover:bg-white/80 dark:hover:bg-white/10 transition-all"
+              >
+                <Globe className="w-4 h-4" />
+                <span>{language.toUpperCase()}</span>
+              </button>
+            </div>
+            <Link
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center whitespace-nowrap bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground rounded-full px-6 py-2 text-sm font-medium shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-all duration-300"
             >
-              Reservar Tour
-            </Button>
+              {t("cta_reserve")}
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -104,9 +136,36 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button className="mt-4 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-xl">
-              Reservar Tour
-            </Button>
+            <div className="flex gap-2 mt-2">
+              <button
+                onClick={() => {
+                  setTheme(theme === "dark" ? "light" : "dark");
+                  setIsMobileMenuOpen(false);
+                }}
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-foreground/80 hover:text-primary hover:bg-primary/10 rounded-xl transition-all font-medium border border-border"
+              >
+                {mounted && theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                Tema
+              </button>
+              <button
+                onClick={() => {
+                  setLanguage(language === "es" ? "en" : "es");
+                  setIsMobileMenuOpen(false);
+                }}
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-foreground/80 hover:text-primary hover:bg-primary/10 rounded-xl transition-all font-medium border border-border"
+              >
+                <Globe className="w-4 h-4" />
+                {language.toUpperCase()}
+              </button>
+            </div>
+            <Link 
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 flex justify-center py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-xl font-medium"
+            >
+              {t("cta_reserve")}
+            </Link>
           </nav>
         </div>
       </div>

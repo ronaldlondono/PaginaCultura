@@ -73,7 +73,7 @@ export function Footer() {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-xl bg-white/60 backdrop-blur-sm border border-white/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300"
+                  className="w-10 h-10 rounded-xl bg-white/60 dark:bg-black/60 backdrop-blur-sm border border-white/50 dark:border-white/10 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:border-primary/30 transition-all duration-300"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>
@@ -144,7 +144,7 @@ export function Footer() {
               <Input
                 type="email"
                 placeholder="tu@email.com"
-                className="rounded-xl bg-white/60 border-white/50 focus:border-primary h-11 text-sm"
+                className="rounded-xl bg-white/60 dark:bg-black/60 border-white/50 dark:border-white/10 focus:border-primary h-11 text-sm"
               />
               <Button
                 type="submit"

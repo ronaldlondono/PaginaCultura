@@ -85,7 +85,7 @@ export function ContactSection() {
               {contactInfo.map((item, index) => (
                 <div
                   key={index}
-                  className="group p-5 rounded-2xl bg-white/60 backdrop-blur-xl border border-white/50 hover:bg-white/80 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+                  className="group p-5 rounded-2xl bg-white/60 dark:bg-black/60 backdrop-blur-xl border border-white/50 dark:border-white/10 hover:bg-white/80 dark:bg-black/80 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
                 >
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center group-hover:from-primary group-hover:to-accent transition-all duration-300">
@@ -121,7 +121,7 @@ export function ContactSection() {
                     key={index}
                     href="#"
                     aria-label={social.label}
-                    className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-primary-foreground hover:bg-white/30 transition-all duration-300"
+                    className="w-12 h-12 rounded-xl bg-white/20 dark:bg-black/20 backdrop-blur-sm flex items-center justify-center text-primary-foreground hover:bg-white/30 dark:bg-black/30 transition-all duration-300"
                   >
                     <social.icon className="w-5 h-5" />
                   </a>
@@ -132,7 +132,7 @@ export function ContactSection() {
 
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <div className="p-8 rounded-3xl bg-white/70 backdrop-blur-xl border border-white/50 shadow-xl shadow-primary/5">
+            <div className="p-8 rounded-3xl bg-white/70 dark:bg-black/70 backdrop-blur-xl border border-white/50 dark:border-white/10 shadow-xl shadow-primary/5">
               <h3 className="font-[family-name:var(--font-display)] text-2xl font-semibold text-foreground mb-2">
                 Reserva tu Tour
               </h3>
@@ -152,7 +152,7 @@ export function ContactSection() {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="rounded-xl bg-white/50 border-white/50 focus:border-primary focus:ring-primary/20 h-12"
+                      className="rounded-xl bg-white/50 dark:bg-black/50 border-white/50 dark:border-white/10 focus:border-primary focus:ring-primary/20 h-12"
                     />
                   </div>
                   <div>
@@ -166,7 +166,7 @@ export function ContactSection() {
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="rounded-xl bg-white/50 border-white/50 focus:border-primary focus:ring-primary/20 h-12"
+                      className="rounded-xl bg-white/50 dark:bg-black/50 border-white/50 dark:border-white/10 focus:border-primary focus:ring-primary/20 h-12"
                     />
                   </div>
                 </div>
@@ -182,7 +182,7 @@ export function ContactSection() {
                       onChange={(e) =>
                         setFormData({ ...formData, phone: e.target.value })
                       }
-                      className="rounded-xl bg-white/50 border-white/50 focus:border-primary focus:ring-primary/20 h-12"
+                      className="rounded-xl bg-white/50 dark:bg-black/50 border-white/50 dark:border-white/10 focus:border-primary focus:ring-primary/20 h-12"
                     />
                   </div>
                   <div>
@@ -194,7 +194,7 @@ export function ContactSection() {
                       onChange={(e) =>
                         setFormData({ ...formData, tour: e.target.value })
                       }
-                      className="w-full h-12 rounded-xl bg-white/50 border border-white/50 px-4 text-foreground focus:border-primary focus:ring-primary/20 focus:outline-none transition-colors"
+                      className="w-full h-12 rounded-xl bg-white/50 dark:bg-black/50 border border-white/50 dark:border-white/10 px-4 text-foreground focus:border-primary focus:ring-primary/20 focus:outline-none transition-colors"
                     >
                       <option value="">Selecciona un tour</option>
                       <option value="esencial">Tour Esencial</option>
@@ -216,7 +216,7 @@ export function ContactSection() {
                       setFormData({ ...formData, message: e.target.value })
                     }
                     rows={4}
-                    className="rounded-xl bg-white/50 border-white/50 focus:border-primary focus:ring-primary/20 resize-none"
+                    className="rounded-xl bg-white/50 dark:bg-black/50 border-white/50 dark:border-white/10 focus:border-primary focus:ring-primary/20 resize-none"
                   />
                 </div>
 
@@ -234,7 +234,7 @@ export function ContactSection() {
         </div>
 
         {/* Map */}
-        <div className="mt-16 rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-white/50">
+        <div className="mt-16 rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 border border-white/50 dark:border-white/10">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.3889774823756!2d-74.8254!3d10.9878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ef42d3c797c53ad%3A0x1c4c2b4c00c87d6b!2sCarrera%2084%2C%20Barranquilla%2C%20Atl%C3%A1ntico!5e0!3m2!1ses!2sco!4v1710000000000!5m2!1ses!2sco"
             width="100%"

@@ -211,7 +211,7 @@ export function GallerySection() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 backdrop-blur-lg border border-white/50 text-foreground hover:bg-white/90 transition-all shadow-lg shadow-primary/5"
+              className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/70 dark:bg-black/70 backdrop-blur-lg border border-white/50 dark:border-white/10 text-foreground hover:bg-white/90 dark:bg-black/90 transition-all shadow-lg shadow-primary/5"
             >
               {isAutoPlaying ? (
                 <>
@@ -233,14 +233,14 @@ export function GallerySection() {
           <div className="flex items-center gap-2">
             <button
               onClick={() => scrollCarousel("left")}
-              className="p-3 rounded-full bg-white/70 backdrop-blur-lg border border-white/50 text-foreground hover:bg-white/90 hover:scale-105 transition-all shadow-lg shadow-primary/5"
+              className="p-3 rounded-full bg-white/70 dark:bg-black/70 backdrop-blur-lg border border-white/50 dark:border-white/10 text-foreground hover:bg-white/90 dark:bg-black/90 hover:scale-105 transition-all shadow-lg shadow-primary/5"
               aria-label="Anterior"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={() => scrollCarousel("right")}
-              className="p-3 rounded-full bg-white/70 backdrop-blur-lg border border-white/50 text-foreground hover:bg-white/90 hover:scale-105 transition-all shadow-lg shadow-primary/5"
+              className="p-3 rounded-full bg-white/70 dark:bg-black/70 backdrop-blur-lg border border-white/50 dark:border-white/10 text-foreground hover:bg-white/90 dark:bg-black/90 hover:scale-105 transition-all shadow-lg shadow-primary/5"
               aria-label="Siguiente"
             >
               <ChevronRight className="w-5 h-5" />
@@ -286,7 +286,7 @@ export function GallerySection() {
               {/* Content */}
               <div className="absolute inset-0 p-6 flex flex-col justify-end">
                 <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white/90 text-xs font-medium mb-3">
+                  <span className="inline-block px-3 py-1 rounded-full bg-white/20 dark:bg-black/20 backdrop-blur-sm text-white/90 text-xs font-medium mb-3">
                     {String(index + 1).padStart(2, "0")} / {String(galleryImages.length).padStart(2, "0")}
                   </span>
                   <h3 className="font-[family-name:var(--font-display)] text-xl lg:text-2xl font-semibold text-white mb-2">
@@ -299,7 +299,7 @@ export function GallerySection() {
               </div>
 
               {/* Glass border effect */}
-              <div className="absolute inset-0 rounded-3xl border border-white/20 group-hover:border-white/40 transition-colors" />
+              <div className="absolute inset-0 rounded-3xl border border-white/20 dark:border-white/10 group-hover:border-white/40 dark:border-white/10 transition-colors" />
 
               {/* Shine effect */}
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -342,7 +342,7 @@ export function GallerySection() {
         >
           <button
             onClick={closeLightbox}
-            className="absolute top-6 right-6 p-3 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white hover:bg-white/20 transition-all z-10"
+            className="absolute top-6 right-6 p-3 rounded-full bg-white/10 dark:bg-black/10 backdrop-blur-lg border border-white/20 dark:border-white/10 text-white hover:bg-white/20 dark:bg-black/20 transition-all z-10"
           >
             <X className="w-6 h-6" />
           </button>
@@ -352,7 +352,7 @@ export function GallerySection() {
               e.stopPropagation();
               prevImage();
             }}
-            className="absolute left-6 p-4 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white hover:bg-white/20 hover:scale-110 transition-all z-10"
+            className="absolute left-6 p-4 rounded-full bg-white/10 dark:bg-black/10 backdrop-blur-lg border border-white/20 dark:border-white/10 text-white hover:bg-white/20 dark:bg-black/20 hover:scale-110 transition-all z-10"
           >
             <ChevronLeft className="w-8 h-8" />
           </button>
@@ -362,7 +362,7 @@ export function GallerySection() {
               e.stopPropagation();
               nextImage();
             }}
-            className="absolute right-6 p-4 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white hover:bg-white/20 hover:scale-110 transition-all z-10"
+            className="absolute right-6 p-4 rounded-full bg-white/10 dark:bg-black/10 backdrop-blur-lg border border-white/20 dark:border-white/10 text-white hover:bg-white/20 dark:bg-black/20 hover:scale-110 transition-all z-10"
           >
             <ChevronRight className="w-8 h-8" />
           </button>
@@ -380,7 +380,7 @@ export function GallerySection() {
             />
             <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
               <div className="max-w-2xl">
-                <span className="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-sm text-white/90 text-sm font-medium mb-3">
+                <span className="inline-block px-3 py-1 rounded-full bg-white/20 dark:bg-black/20 backdrop-blur-sm text-white/90 text-sm font-medium mb-3">
                   {String(selectedImage + 1).padStart(2, "0")} / {String(galleryImages.length).padStart(2, "0")}
                 </span>
                 <h3 className="font-[family-name:var(--font-display)] text-3xl font-semibold text-white mb-3">
@@ -394,7 +394,7 @@ export function GallerySection() {
           </div>
 
           {/* Thumbnails */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 p-2 rounded-2xl bg-white/10 backdrop-blur-lg border border-white/20">
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 p-2 rounded-2xl bg-white/10 dark:bg-black/10 backdrop-blur-lg border border-white/20 dark:border-white/10">
             {galleryImages.map((image, index) => (
               <button
                 key={index}

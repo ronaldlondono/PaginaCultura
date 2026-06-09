@@ -61,7 +61,7 @@ export function TeamSection() {
 
         {/* University Badge */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex items-center gap-4 px-6 py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white/50 shadow-lg shadow-emerald-500/5">
+          <div className="inline-flex items-center gap-4 px-6 py-3 rounded-2xl bg-white/70 dark:bg-black/70 backdrop-blur-xl border border-white/50 dark:border-white/10 shadow-lg shadow-emerald-500/5">
             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center">
               <GraduationCap className="w-6 h-6 text-white" />
             </div>
@@ -80,7 +80,7 @@ export function TeamSection() {
               className="group relative"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative bg-white/70 backdrop-blur-xl rounded-3xl border border-white/50 shadow-lg shadow-emerald-500/5 p-8 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-2 text-center flex flex-col items-center">
+              <div className="relative bg-white/70 dark:bg-black/70 backdrop-blur-xl rounded-3xl border border-white/50 dark:border-white/10 shadow-lg shadow-emerald-500/5 p-8 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-500/10 hover:-translate-y-2 text-center flex flex-col items-center">
                 {/* User Icon Placeholder */}
                 <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                   <div className="w-12 h-12 rounded-full bg-white shadow-inner flex items-center justify-center text-emerald-600">
@@ -127,7 +127,7 @@ export function TeamSection() {
 
         {/* Project Info */}
         <div className="mt-16 text-center">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 px-8 py-6 rounded-3xl bg-white/70 backdrop-blur-xl border border-white/50 shadow-lg shadow-emerald-500/5">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 px-8 py-6 rounded-3xl bg-white/70 dark:bg-black/70 backdrop-blur-xl border border-white/50 dark:border-white/10 shadow-lg shadow-emerald-500/5">
             <div className="text-center sm:text-left">
               <p className="text-sm text-muted-foreground mb-1">Proyecto de Grado</p>
               <p className="font-[family-name:var(--font-display)] font-semibold text-foreground">

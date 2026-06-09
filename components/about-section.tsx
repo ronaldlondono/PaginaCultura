@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Heart, Music, Utensils, Palette, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 const features = [
   {
@@ -36,7 +37,13 @@ export function AboutSection() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Images */}
-          <div className="relative">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl shadow-primary/20">
               <Image
                 src="/images/barranquilla-malecon.jpg"
@@ -47,7 +54,7 @@ export function AboutSection() {
             </div>
             
             {/* Floating card */}
-            <div className="absolute -bottom-6 -right-6 lg:-right-12 p-6 rounded-3xl bg-white/80 backdrop-blur-xl border border-white/50 shadow-2xl shadow-primary/10 max-w-xs">
+            <div className="absolute -bottom-6 -right-6 lg:-right-12 p-6 rounded-3xl bg-white/80 dark:bg-black/80 backdrop-blur-xl border border-white/50 dark:border-white/10 shadow-2xl shadow-primary/10 max-w-xs">
               <div className="flex items-center gap-4 mb-3">
                 <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                   <MapPin className="w-6 h-6 text-primary-foreground" />
@@ -71,10 +78,15 @@ export function AboutSection() {
                 className="object-cover"
               />
             </div>
-          </div>
+          </motion.div>
 
           {/* Content */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
               Sobre Nosotros
@@ -98,7 +110,7 @@ export function AboutSection() {
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="group p-5 rounded-2xl bg-white/60 backdrop-blur-sm border border-white/50 hover:bg-white/80 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
+                  className="group p-5 rounded-2xl bg-white/60 dark:bg-black/60 backdrop-blur-sm border border-white/50 dark:border-white/10 hover:bg-white/80 dark:bg-black/80 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
                 >
                   <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-3 group-hover:from-primary group-hover:to-accent transition-all duration-300">
                     <feature.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors" />
@@ -108,7 +120,7 @@ export function AboutSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
