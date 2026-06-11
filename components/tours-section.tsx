@@ -1,7 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Check, Star, Clock, Users, MapPin } from "lucide-react";
+import { useLanguage } from "@/lib/i18n-context";
+import { motion } from "framer-motion";
 
 const tours = [
   {
@@ -55,6 +58,9 @@ const tours = [
 ];
 
 export function ToursSection() {
+  const { t } = useLanguage();
+  const whatsappUrl = "https://wa.me/573000000000?text=Hola,%20me%20gustaría%20información%20sobre%20la%20preventa%20de%20boletas%20para%20rutas%20inmersivas.";
+
   return (
     <section id="tours" className="relative py-24 lg:py-32 overflow-hidden">
       {/* Background */}
@@ -64,7 +70,13 @@ export function ToursSection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             Nuestros Tours
@@ -78,10 +90,15 @@ export function ToursSection() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
             Diseñamos cada experiencia pensando en ti. Desde recorridos express hasta inmersiones culturales completas.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Tours Grid */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <motion.div 
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid md:grid-cols-3 gap-6 lg:gap-8"
+        >
           {tours.map((tour, index) => (
             <div
               key={index}
@@ -141,20 +158,23 @@ export function ToursSection() {
                 </ul>
 
                 {/* CTA */}
-                <Button
-                  className={`w-full rounded-xl py-6 text-base font-medium transition-all duration-300 ${
+                <Link
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center justify-center w-full rounded-xl py-4 text-base font-medium transition-all duration-300 ${
                     tour.popular
                       ? "bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg shadow-primary/30 hover:shadow-primary/50"
                       : "bg-foreground/10 hover:bg-foreground/20 text-foreground"
                   }`}
                 >
                   <MapPin className="w-4 h-4 mr-2" />
-                  Reservar Ahora
-                </Button>
+                  {t("cta_reserve")}
+                </Link>
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Bottom note */}
         <p className="text-center text-muted-foreground mt-12">
